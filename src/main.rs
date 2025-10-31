@@ -10,7 +10,8 @@ fn main() {
     let name = String::from(" ");
     build_user(email, name);
 
-    calculate_the_area_rectangle()
+    calculate_the_area_rectangle();
+    method_synthax();
 }
 
 // slices
@@ -99,4 +100,27 @@ fn area2(dimensions: (u32, u32)) -> u32 {
 
 fn area_struct(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
+}
+
+// method syntax
+#[derive(Debug)]
+struct Rect{
+    width: u32,
+    height: u32,  
+}
+
+impl Rect{
+    fn area(&self)->u32{
+        self.width * self.height
+
+    }
+}
+
+fn method_synthax(){
+    let rect1 = Rect{
+        width: 30,
+        height: 50,
+    };
+
+    println!(" the area with method syntax is {} square pixels ", rect1.area());
 }
